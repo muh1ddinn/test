@@ -2,30 +2,33 @@ package main
 
 import "fmt"
 
+func mergeStrings(str1, str2 string) string {
+	var mergedString string
+	maxlen := len(str1)
+	if len(str2) > maxlen {
+		maxlen = len(str2)
+	}
 
-func kk(x,f,g,h int)bool{
+	for i := 0; i < maxlen; i++ {
+		if i < len(str1) {
+			mergedString += string(str1[i])
+			fmt.Println(mergedString) 
+		}
 
+		if i < len(str2) {
+			mergedString += string(str2[i])
+			fmt.Println(mergedString) 
+		}
+	}
 
-   if (x+f+g+h)%2==0 {
+	return mergedString
+}
 
-	return true
-   }else {
-
-	return false
-   }
-
+func main() {
+	str1 := "hello"
+	str2 := "world"
+	result := mergeStrings(str1, str2)
+	fmt.Println(result) // This will print "hweolrllod"
 }
 
 
-
-
-func main(){
- 
-	c:=kk(3,5,2,2)
-     
-	fmt.Println(c)
-
-
-
-
-}
