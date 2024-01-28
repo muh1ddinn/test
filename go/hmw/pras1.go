@@ -6,7 +6,7 @@ func classifyNumbers(k []int) (even, odd, manf, mus, nol []int) {
 	for i := 0; i < len(k); i++ {
 		if k[i]%2 == 0 && k[i] != 0 {
 			even = append(even, k[i])
-		} else {
+		} else if k[i]%2 != 0 && k[i] != 0 {
 			odd = append(odd, k[i])
 		}
 		if k[i] < 0 {
