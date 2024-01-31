@@ -39,27 +39,25 @@ import (
 	"fmt"
 )
 
-func swapMinMax(arr []int) []int {
+func swapMinMax(arr []int) int {
 	minIndex := 0
-	maxIndex := 0
 
 	for i := 0; i < len(arr); i++ {
 		if arr[i] < arr[minIndex] {
 			minIndex = i
+
 		}
-		if arr[i] > arr[maxIndex] {
-			maxIndex = i
-		}
+
 	}
 
-	y := arr[maxIndex]
-	arr[maxIndex] = arr[minIndex]
-	arr[minIndex] = y
+	f := minIndex - 0
 
-	return arr
+	return f
 }
 
 func main() {
-	arr := []int{9, 2, 11, 4, 5}
-	fmt.Println(swapMinMax(arr))
+	arr := []int{9, 2, 11, 1, 5}
+	k := swapMinMax(arr)
+
+	fmt.Println(k, "ta son bor")
 }

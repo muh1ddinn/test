@@ -2,20 +2,33 @@ package main
 
 import "fmt"
 
-func sum(l [10]int) (p, s int) {
-	for i := 1; i < 10; i++ {
-		if l[i]%2 == 0 {
-			p = p * l[i]
-		} else {
-			s = s + l[i]
-		}
-	}
-	return
+type Student struct {
+	name        string
+	scholarship int
+	course      int
 }
 
 func main() {
-	arr := [10]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
-	p, s := sum(arr)
-	fmt.Println(p) // prints the sum of even numbers
-	fmt.Println(s) // prints the sum of odd numbers
+	students := []Student{
+		{"Student1", 5000, 2},
+		{"Student2", 5000, 2},
+		{"Student3", 5000, 1},
+		{"Student4", 5000, 3},
+		{"Student5", 5000, 2},
+		{"Student6", 5000, 1},
+		{"Student7", 5000, 2},
+		{"Student8", 5000, 3},
+		{"Student9", 5000, 2},
+		{"Student10", 5000, 1},
+	}
+
+	totalScholarship := 0
+	for _, student := range students {
+		if student.course == 2 {
+			totalScholarship += student.scholarship
+
+		}
+	}
+
+	fmt.Printf("Total scholarships paid to all 2nd year students: %d\n", totalScholarship/5000)
 }
