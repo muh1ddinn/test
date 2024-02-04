@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 /*
 type Worker interface {
 	work() string
@@ -30,6 +32,7 @@ func main() {
 	Printwork(t)
 
 }
+*/
 
 type shape interface {
 	area() float64
@@ -87,4 +90,3 @@ func main() {
 	Prinareaa(to)
 
 }
-*/
